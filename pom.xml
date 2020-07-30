@@ -16,7 +16,7 @@
 	<description>EduTed App webservices</description>
 
 	<properties>
-		<java.version>11</java.version>
+		<java.version>1.8</java.version>
 		<start-class>com.eduted.webservices.EduTedApplication</start-class>
 	</properties>
 
@@ -75,7 +75,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>eduTed-webservice-api</finalName>
+		<finalName>eduted-webservice-api</finalName>
 			
 		<plugins>			
 			<plugin>
@@ -92,11 +92,6 @@
         		<version>3.0.3</version>       		
         		<configuration>
         			<appName>eduted-app</appName>
-<!-- 
-        			<processTypes>
-  						<web>java -Dserver.port=$PORT -jar target/Test-Spring-Deployment-api.jar</web>
-			  		</processTypes>
--->
 				</configuration>
       		</plugin>
 		</plugins>

@@ -26,8 +26,15 @@ public class UserResources
 	private UserService userServices = new UserService();
 	
 /*******************************************************************************************/
+
+	@RequestMapping(value="/", method = RequestMethod.GET)
+	@ResponseBody
+	public ResponseEntity<String> index()
+	{
+		return new ResponseEntity<String> ("<h1><center>Hello World!!!</h1></center>", HttpStatus.OK);
+	}
 	
-	@PostMapping("user")
+	@PostMapping("/user")
 	@ResponseBody
 	public ResponseEntity<String> createNewUser(@RequestBody User user)
 	{
@@ -40,7 +47,7 @@ public class UserResources
 	}
 	
 
-	@GetMapping("user/{id}")
+	@GetMapping("/user/{id}")
 	public ResponseEntity<String> searchUser(@PathVariable("id") String id)
 	{
 		if(id == null)
@@ -53,11 +60,5 @@ public class UserResources
 	public ResponseEntity<List<User>> searchAllUser()
 	{
 		return new ResponseEntity<List<User>> (userServices.getAllUsers(), HttpStatus.OK);
-	}
-	
-	@RequestMapping(value="/", method = RequestMethod.GET)
-	public ResponseEntity<String> index()
-	{
-		return new ResponseEntity<String> ("<h1><center>Hello World!!!</h1></center>", HttpStatus.OK);
 	}
 }
