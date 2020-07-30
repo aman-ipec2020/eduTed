@@ -1,0 +1,1 @@
+web: java -Dserver.port=$PORT -jar target/eduTed-webservice-api.jar
